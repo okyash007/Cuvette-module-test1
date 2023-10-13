@@ -31,9 +31,9 @@
             </div>
           </div>
 
-          <div id="rules">
-            <div></div>
-            <div><button> rules </button></div>
+          <div class="rules">
+            <div id="rulesTextDiv"></div>
+            <div id="rulesBtnDiv"><button id="rulesBtn" class="btn">RULES</button></div>
             
           </div>
 
@@ -43,16 +43,18 @@
   
 
     <div id="result_area" >
-      <div class="buttons-div">
+      <div>
+        <div class="buttons-div">
 
-      <button id="rock"><img width="70" src="https://s3-alpha-sig.figma.com/img/e2f5/14e9/7d8f1b87d406a7bced07190e2c368075?Expires=1698019200&Signature=Wrmfn~QNJu5xkVjclL1tHLD1cZOa19y2l9XDhU9A44AxIyeNdPO0qGeNvAwF~co0skbRXn4vLIsQtguYiEkrf0CFkXJ3LKGNxF91FkOLQtj3tnsxGRKG168Njx7nvLd8RZFQsCWBwiqdxTJUmnwlvpiwOuMIl1kmDRiSF5FzK7iE3on0jNtZUTLnDHMgsA9CC4MbVMuGGk~tRx9VHLjVkZERvjbDolegvjDG3QUm3loQAcZfkn4YSbSuv-SqJpKSrzK~w3jlRaBSmHDIbzzhDucYdCtGhbMN5c6oRL4b0E61CcAYD6gq3YEHRHlNnfAdwgxSht7ft~BSPOHXhOiujA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" srcset=""></button>
-      <button id="scissors"><img width=70 src="https://s3-alpha-sig.figma.com/img/388b/63da/8e9ba336eea3ea7f107fc48755a6b68d?Expires=1698019200&Signature=eOwoi7INVrqp0oPYuasXJtR5kQafS2Ao5U9P1IaeY-2mQ8we0DMxb8wMvGuXAimOQvE4SrAl1v2EnYI4jArTK2xVoLHyA-GvtdtM9TwPb0EpW3W5njvkHsscROzezsYXmL-0~wLahJixBiWAjXy8AGyUEATepKOWmXl7IWtbabD6BLjtemJTEHj4FaCLrj5X5s4jZWTPuHjlIYCNULBOwmYnkz8~RZ7i-5skOU4ZgGMjDMckfeIeMG6fYTQOIZe-unJ1PsvNa5AniIyvLaOg6kn6hEtEvzFD3uuteZAZYcMAUuzPn2j7wcsGeSmQ-5M8erqCqpOI1BR0GX77~ynIEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" srcset=""></button>
-      <button id="paper"><img width="70" src="https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1698019200&Signature=kIkrhiUmB7CRucg11Xvzv8QNxLDC8zVaZgQerXXnYjgyXgH11RHKrdLkI4BTYcCPLbPmyqNBTpHbPgK3DboIYYgAFiDlYXC5IHyebNP-bA29LvlZnPsp1brts5iy3nVYJdUc1eok2WgjIYMMNe-jUNO1Zo1UEugDXghbW0Js17Y4HGoedGF2WUKCjNO81E2Z2HSnmBAa75uQjPrEA43H9AT3OCmOnlHAOgawq-74pWbGwR01M8ep9sgWV8FlBVk9jkFYHRHuze7OMusr5a0Q4XTR9xQHPiHPaDUPBT5R9L4kSOIdOipSBriDLIxE2L-oEzNHhtgzW9ttjaZJmIzzjg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" srcset=""></button>
-        <div class="t1"></div>
-        <div class="t2"></div>
-        <div class="t3"></div>
+          <button id="rock"><img width="70" src="https://s3-alpha-sig.figma.com/img/e2f5/14e9/7d8f1b87d406a7bced07190e2c368075?Expires=1698019200&Signature=Wrmfn~QNJu5xkVjclL1tHLD1cZOa19y2l9XDhU9A44AxIyeNdPO0qGeNvAwF~co0skbRXn4vLIsQtguYiEkrf0CFkXJ3LKGNxF91FkOLQtj3tnsxGRKG168Njx7nvLd8RZFQsCWBwiqdxTJUmnwlvpiwOuMIl1kmDRiSF5FzK7iE3on0jNtZUTLnDHMgsA9CC4MbVMuGGk~tRx9VHLjVkZERvjbDolegvjDG3QUm3loQAcZfkn4YSbSuv-SqJpKSrzK~w3jlRaBSmHDIbzzhDucYdCtGhbMN5c6oRL4b0E61CcAYD6gq3YEHRHlNnfAdwgxSht7ft~BSPOHXhOiujA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" srcset=""></button>
+          <button id="scissors"><img width=70 src="https://s3-alpha-sig.figma.com/img/388b/63da/8e9ba336eea3ea7f107fc48755a6b68d?Expires=1698019200&Signature=eOwoi7INVrqp0oPYuasXJtR5kQafS2Ao5U9P1IaeY-2mQ8we0DMxb8wMvGuXAimOQvE4SrAl1v2EnYI4jArTK2xVoLHyA-GvtdtM9TwPb0EpW3W5njvkHsscROzezsYXmL-0~wLahJixBiWAjXy8AGyUEATepKOWmXl7IWtbabD6BLjtemJTEHj4FaCLrj5X5s4jZWTPuHjlIYCNULBOwmYnkz8~RZ7i-5skOU4ZgGMjDMckfeIeMG6fYTQOIZe-unJ1PsvNa5AniIyvLaOg6kn6hEtEvzFD3uuteZAZYcMAUuzPn2j7wcsGeSmQ-5M8erqCqpOI1BR0GX77~ynIEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" srcset=""></button>
+          <button id="paper"><img width="70" src="https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1698019200&Signature=kIkrhiUmB7CRucg11Xvzv8QNxLDC8zVaZgQerXXnYjgyXgH11RHKrdLkI4BTYcCPLbPmyqNBTpHbPgK3DboIYYgAFiDlYXC5IHyebNP-bA29LvlZnPsp1brts5iy3nVYJdUc1eok2WgjIYMMNe-jUNO1Zo1UEugDXghbW0Js17Y4HGoedGF2WUKCjNO81E2Z2HSnmBAa75uQjPrEA43H9AT3OCmOnlHAOgawq-74pWbGwR01M8ep9sgWV8FlBVk9jkFYHRHuze7OMusr5a0Q4XTR9xQHPiHPaDUPBT5R9L4kSOIdOipSBriDLIxE2L-oEzNHhtgzW9ttjaZJmIzzjg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" srcset=""></button>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="t3"></div>
 
-  </div>
+        </div>
+      </div>
     <script src="./index.js"></script>
   </body>
 </html>

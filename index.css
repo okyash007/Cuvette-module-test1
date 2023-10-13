@@ -5,9 +5,8 @@ body {
   margin: 0;
 }
 
-.body{
+.body {
   height: 100vh;
-
 }
 
 .rps {
@@ -47,77 +46,79 @@ body {
   font-weight: 800;
 }
 
-.header{
-    width: 50%;
-    display: flex;
-    border: 2px solid white;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-radius: 10px;
+.header {
+  width: 50%;
+  display: flex;
+  border: 2px solid white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.head-align{
-    display: flex;
-    justify-content: center;
+.head-align {
+  display: flex;
+  justify-content: center;
 }
 
-#rock, #paper, #scissors{
-    padding: 20px;
-    border-radius: 100%;
-    position: absolute;
-    cursor: pointer;
+#rock,
+#paper,
+#scissors {
+  padding: 20px;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
 }
 
-#rock{
-   top: 0;
-   left: 0;
-    border: 20px solid #0074B6;
+#rock {
+  top: 0;
+  left: 0;
+  border: 20px solid #0074b6;
 }
-#scissors{
-    top: 0;
-    right: 0;
-    border: 20px solid #BD00FF;
+#scissors {
+  top: 0;
+  right: 0;
+  border: 20px solid #bd00ff;
 }
-#paper{
-    bottom: 0;
-    border: 20px solid #FFA943
+#paper {
+  bottom: 0;
+  border: 20px solid #ffa943;
 }
 
-.resultArea-div{
+.resultArea-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.resultArea-div p{
+.resultArea-div p {
   padding: 0;
   margin: 0;
 }
 
-.buttons-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 400px;
-    height: 400px;
-
+.buttons-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 400px;
+  height: 400px;
 }
 
-#result_area{
+#result_area {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
 }
 
-#rules{
+.rules {
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
-.try-again{
+.try-again {
   background-color: white;
   color: #686868;
   border: 1px solid white;
@@ -129,31 +130,61 @@ body {
   font-weight: 600;
 }
 
-.t1, .t2{
+.t1,
+.t2 {
   width: 10px;
   height: 400px;
   background: black;
   position: absolute;
 }
 
-.t1{
+.t1 {
   transform: rotate(25deg);
   right: 130px;
   z-index: -1;
 }
 
-.t2{
+.t2 {
   transform: rotate(-25deg);
   left: 130px;
   z-index: -1;
 }
-.t3{
+.t3 {
   height: 10px;
   width: 400px;
   position: absolute;
   background: black;
   top: 70px;
   z-index: -1;
+}
 
+.btn {
+  background: #8cc461;
+  color: aliceblue;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.winnerDiv,
+.loserDiv {
+  margin: 100px;
+  position: relative;
+  width: 150px;
+  height: 154px;
+  border-radius: 100%;
   
+}
+
+.wins{
+  box-shadow: 0px 0px 0px 20px #688e49, 0 0 0 40px #7aaa55,0 0 0 60px rgb(132, 184, 92);
+}
+
+#result_area div {
+  display: flex;
+  justify-content: center;
 }

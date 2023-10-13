@@ -2,10 +2,11 @@ const rock = document.getElementById("rock")
 const paper = document.getElementById("paper")
 const scissors = document.getElementById("scissors")
 const buttons = [rock , paper , scissors]
-const resultArea = document.querySelector("#result_area");
+const resultArea = document.querySelector("#result_area div");
 const playerElement = document.getElementById('player')
 const computerElement = document.getElementById('computer')
-const rulesBTN = document.querySelector('#rules div button')
+const rulesBTN = document.querySelector('#rulesBtn')
+const rulesBtnDiv = document.getElementById('rulesBtnDiv')
 let playerCount = localStorage.getItem('playerCount') || 0;
 let computerCount = localStorage.getItem('computerCount') || 0;
 
@@ -33,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function computerPlay() {
-  const choices = ["rock", "paper", "scissors"];
+  const choices = [rock, paper, scissors];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
@@ -52,6 +53,8 @@ textAgainstPC.innerHTML = "AGAINST PC"
 
 const result = document.createElement("p")
 
+// const rulesTest = document.createElement()
+
 const resultArea_div = document.createElement("div")
 resultArea_div.classList.add("resultArea-div")
 resultArea_div.appendChild(result)
@@ -59,31 +62,48 @@ resultArea_div.appendChild(textAgainstPC)
 resultArea_div.appendChild(tryAgainButton)
 
 
-// rulesBTN.addEventListener('click',  )
+rulesBTN.addEventListener('click', function (){
+
+} )
+
+const winnerDiv = document.createElement("div")
+winnerDiv.classList.add("winnerDiv")
+const loserDiv = document.createElement("div")
+loserDiv.classList.add("loserDiv")
+const nextBTN = document.createElement("button")
+nextBTN.classList.add("btn")
+nextBTN.innerHTML = "NEXT"
 
 
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
-    // console.log("hi")
-    let resultText = playRound(buttons[i].id, computer);
+    let resultText = playRound(buttons[i].id, computer.id);
     result.innerHTML = resultText;
+    console.log(buttons[i])
+    console.log(computer)
     if(resultText === "You win!" ){
+      rulesBtnDiv.appendChild(nextBTN)
+      winnerDiv.classList.add("wins")
       playerCount++
       localStorage.setItem('playerCount', playerCount);
       playerElement.innerHTML = localStorage.getItem('playerCount')
     }
-    else if(resultText === "You lose!") {
+    if(resultText === "You lose!") {
+      loserDiv.classList.add("wins")
       computerCount++
       localStorage.setItem('computerCount', computerCount);
       computerElement.innerHTML = localStorage.getItem('computerCount')
     }
+    
     resultArea.innerHTML = ""
+    loserDiv.appendChild(computer)
+    winnerDiv.appendChild(buttons[i].cloneNode(true))
+    resultArea.appendChild(winnerDiv)
     resultArea.appendChild(resultArea_div)
+    resultArea.appendChild(loserDiv)
+
   });
 }
-
-
-
 
 console.log(localStorage)
