@@ -1,0 +1,159 @@
+body {
+  background-color: #8cc461;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.body{
+  height: 100vh;
+
+}
+
+.rps {
+  color: aliceblue;
+}
+
+.rps p {
+  margin: 0;
+  padding: 0;
+  font-size: xx-large;
+}
+
+.scoreCard {
+  display: flex;
+}
+
+.scoreCard div {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 110px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+.scoreCard div p {
+  padding: 0;
+  margin: 0;
+}
+
+#player,
+#computer {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.header{
+    width: 50%;
+    display: flex;
+    border: 2px solid white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.head-align{
+    display: flex;
+    justify-content: center;
+}
+
+#rock, #paper, #scissors{
+    padding: 20px;
+    border-radius: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#rock{
+   top: 0;
+   left: 0;
+    border: 20px solid #0074B6;
+}
+#scissors{
+    top: 0;
+    right: 0;
+    border: 20px solid #BD00FF;
+}
+#paper{
+    bottom: 0;
+    border: 20px solid #FFA943
+}
+
+.resultArea-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultArea-div p{
+  padding: 0;
+  margin: 0;
+}
+
+.buttons-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 400px;
+    height: 400px;
+
+}
+
+#result_area{
+  display: flex;
+  justify-content: center;
+}
+
+#rules{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.try-again{
+  background-color: white;
+  color: #686868;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.t1, .t2{
+  width: 10px;
+  height: 400px;
+  background: black;
+  position: absolute;
+}
+
+.t1{
+  transform: rotate(25deg);
+  right: 130px;
+  z-index: -1;
+}
+
+.t2{
+  transform: rotate(-25deg);
+  left: 130px;
+  z-index: -1;
+}
+.t3{
+  height: 10px;
+  width: 400px;
+  position: absolute;
+  background: black;
+  top: 70px;
+  z-index: -1;
+
+  
+}
