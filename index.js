@@ -1,23 +1,24 @@
-const rock = document.getElementById("rock")
-const paper = document.getElementById("paper")
-const scissors = document.getElementById("scissors")
-const buttons = [rock , paper , scissors]
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+const buttons = [rock, paper, scissors];
 const resultArea = document.querySelector("#result_area div");
-const playerElement = document.getElementById('player')
-const computerElement = document.getElementById('computer')
-const rulesBTN = document.querySelector('#rulesBtn')
-const rulesBtnDiv = document.getElementById('rulesBtnDiv')
-let playerCount = localStorage.getItem('playerCount') || 0;
-let computerCount = localStorage.getItem('computerCount') || 0;
+const playerElement = document.getElementById("player");
+const computerElement = document.getElementById("computer");
+const rulesBTN = document.querySelector("#rulesBtn");
+const rulesBtnDiv = document.getElementById("rulesBtnDiv");
+const rulesTextDiv = document.getElementById("rulesTextDiv");
+let playerCount = localStorage.getItem("playerCount") || 0;
+let computerCount = localStorage.getItem("computerCount") || 0;
 
-playerElement.innerHTML = playerCount
-computerElement.innerHTML = computerCount
+playerElement.innerHTML = playerCount;
+computerElement.innerHTML = computerCount;
 
-rock.id = "rock"
-paper.id = "paper"
-scissors.id = "scissors"
+rock.id = "rock";
+paper.id = "paper";
+scissors.id = "scissors";
 
-console.log(buttons)
+console.log(buttons);
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -43,67 +44,86 @@ let computer = computerPlay();
 
 const tryAgainButton = document.createElement("button");
 tryAgainButton.innerText = "PLAY AGAIN";
-tryAgainButton.classList.add("try-again")
+tryAgainButton.classList.add("try-again");
 tryAgainButton.addEventListener("click", () => {
   window.location.reload();
 });
 
-const textAgainstPC = document.createElement("p")
-textAgainstPC.innerHTML = "AGAINST PC"
+const textAgainstPC = document.createElement("p");
+textAgainstPC.innerHTML = "AGAINST PC";
 
-const result = document.createElement("p")
+const result = document.createElement("p");
 
 // const rulesTest = document.createElement()
 
-const resultArea_div = document.createElement("div")
-resultArea_div.classList.add("resultArea-div")
-resultArea_div.appendChild(result)
-resultArea_div.appendChild(textAgainstPC)
-resultArea_div.appendChild(tryAgainButton)
+const resultArea_div = document.createElement("div");
+resultArea_div.classList.add("resultArea-div");
+resultArea_div.appendChild(result);
+resultArea_div.appendChild(textAgainstPC);
+resultArea_div.appendChild(tryAgainButton);
+
+const rules = [
+  "Rock beats scissors, scissors beat paper, and paper beats rock.",
+  "Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”",
+  "Use rock, paper, scissors to settle minor decisions or simply play to pass the time",
+  "If both players lay down the same hand, each player lays down another hand",
+];
+
+const ul = document.createElement("ul");
+for (let i = 0; i < rules.length; i++) {
+  const li = document.createElement("li");
+  li.textContent = rules[i];
+  ul.appendChild(li);
+}
+
+const ulClose = document.createElement("button");
+ulClose.innerHTML = "X"
+ulClose.addEventListener("click", function () {
+  rulesTextDiv.innerHTML = "";
+});
+
+rulesBTN.addEventListener("click", function () {
+  rulesTextDiv.appendChild(ulClose)
+  rulesTextDiv.appendChild(ul);
+});
 
 
-rulesBTN.addEventListener('click', function (){
 
-} )
-
-const winnerDiv = document.createElement("div")
-winnerDiv.classList.add("winnerDiv")
-const loserDiv = document.createElement("div")
-loserDiv.classList.add("loserDiv")
-const nextBTN = document.createElement("button")
-nextBTN.classList.add("btn")
-nextBTN.innerHTML = "NEXT"
-
-
+const winnerDiv = document.createElement("div");
+winnerDiv.classList.add("winnerDiv");
+const loserDiv = document.createElement("div");
+loserDiv.classList.add("loserDiv");
+const nextBTN = document.createElement("button");
+nextBTN.classList.add("btn");
+nextBTN.innerHTML = "NEXT";
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     let resultText = playRound(buttons[i].id, computer.id);
     result.innerHTML = resultText;
-    console.log(buttons[i])
-    console.log(computer)
-    if(resultText === "You win!" ){
-      rulesBtnDiv.appendChild(nextBTN)
-      winnerDiv.classList.add("wins")
-      playerCount++
-      localStorage.setItem('playerCount', playerCount);
-      playerElement.innerHTML = localStorage.getItem('playerCount')
+    console.log(buttons[i]);
+    console.log(computer);
+    if (resultText === "You win!") {
+      rulesBtnDiv.appendChild(nextBTN);
+      winnerDiv.classList.add("wins");
+      playerCount++;
+      localStorage.setItem("playerCount", playerCount);
+      playerElement.innerHTML = localStorage.getItem("playerCount");
     }
-    if(resultText === "You lose!") {
-      loserDiv.classList.add("wins")
-      computerCount++
-      localStorage.setItem('computerCount', computerCount);
-      computerElement.innerHTML = localStorage.getItem('computerCount')
+    if (resultText === "You lose!") {
+      loserDiv.classList.add("wins");
+      computerCount++;
+      localStorage.setItem("computerCount", computerCount);
+      computerElement.innerHTML = localStorage.getItem("computerCount");
     }
-    
-    resultArea.innerHTML = ""
-    loserDiv.appendChild(computer)
-    winnerDiv.appendChild(buttons[i].cloneNode(true))
-    resultArea.appendChild(winnerDiv)
-    resultArea.appendChild(resultArea_div)
-    resultArea.appendChild(loserDiv)
 
+    resultArea.innerHTML = "";
+    loserDiv.appendChild(computer.cloneNode(true));
+    winnerDiv.appendChild(buttons[i].cloneNode(true));
+    resultArea.appendChild(winnerDiv);
+    resultArea.appendChild(resultArea_div);
+    resultArea.appendChild(loserDiv);
   });
 }
 
-console.log(localStorage)
+console.log(localStorage);

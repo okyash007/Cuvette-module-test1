@@ -112,18 +112,14 @@ body {
   justify-content: center;
 }
 
-.rules {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+
 
 .try-again {
   background-color: white;
   color: #686868;
   border: 1px solid white;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
   letter-spacing: 2px;
@@ -177,7 +173,7 @@ body {
   width: 150px;
   height: 154px;
   border-radius: 100%;
-  
+  background: wheat;
 }
 
 .wins{
@@ -187,4 +183,49 @@ body {
 #result_area div {
   display: flex;
   justify-content: center;
+}
+
+.rules {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#rulesBtnDiv{
+  display: flex;
+  justify-content: end;
+}
+
+#rulesTextDiv {
+  position: relative;
+  margin: 0 20px;
+  width: 300px;
+  padding: 10px;
+}
+
+#rulesTextDiv ul{
+  border: 10px solid white;
+  border-radius: 20px;
+  color: white;
+  margin-top: 30px;
+  margin-right: 20px;
+  padding: 20px 40px;
+  background-color: #004429;
+}
+
+#rulesTextDiv ul li{
+  margin: 10px 0;
+}
+
+#rulesTextDiv button{
+  cursor: pointer;
+  border: 8px solid white;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 100%;
+  padding: 10px 15px;
+  background: #FF0000;
+  position: absolute;
+  right: 0;
 }
