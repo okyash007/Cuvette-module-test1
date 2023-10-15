@@ -57,6 +57,7 @@ body {
 }
 
 .head-align {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
@@ -93,6 +94,8 @@ body {
 }
 
 .resultArea-div p {
+  color: white;
+  font-size: 20px;
   padding: 0;
   margin: 0;
 }
@@ -112,18 +115,17 @@ body {
   justify-content: center;
 }
 
-
-
 .try-again {
   background-color: white;
   color: #686868;
   border: 1px solid white;
   border-radius: 5px;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 30px;
   cursor: pointer;
   letter-spacing: 2px;
   font-weight: 600;
+
 }
 
 .t1,
@@ -176,8 +178,9 @@ body {
   background: wheat;
 }
 
-.wins{
-  box-shadow: 0px 0px 0px 20px #688e49, 0 0 0 40px #7aaa55,0 0 0 60px rgb(132, 184, 92);
+.wins {
+  box-shadow: 0px 0px 0px 20px #688e49, 0 0 0 40px #7aaa55,
+    0 0 0 60px rgb(132, 184, 92);
 }
 
 #result_area div {
@@ -191,19 +194,23 @@ body {
   right: 0;
 }
 
-#rulesBtnDiv{
+#rulesBtnDiv {
   display: flex;
   justify-content: end;
 }
 
 #rulesTextDiv {
+  z-index: 2;
   position: relative;
   margin: 0 20px;
-  width: 300px;
+  width: 400px;
   padding: 10px;
 }
 
-#rulesTextDiv ul{
+#rulesTextDiv ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 10px solid white;
   border-radius: 20px;
   color: white;
@@ -211,13 +218,15 @@ body {
   margin-right: 20px;
   padding: 20px 40px;
   background-color: #004429;
+  list-style-type: square;
 }
 
-#rulesTextDiv ul li{
+#rulesTextDiv ul li {
+  font-size: 14px;
   margin: 10px 0;
 }
 
-#rulesTextDiv button{
+#rulesTextDiv button {
   cursor: pointer;
   border: 8px solid white;
   color: white;
@@ -225,7 +234,50 @@ body {
   font-weight: 700;
   border-radius: 100%;
   padding: 10px 15px;
-  background: #FF0000;
+  background: #ff0000;
   position: absolute;
   right: 0;
+}
+
+.nextIMG {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.trophy {
+  position: absolute;
+  bottom: 0;
+}
+
+.nextDIV {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hurry, .youWonText{
+  padding: 0;
+  margin: 0;
+  color: white;
+  letter-spacing: 5px;
+}
+
+.hurry{
+  font-size: 80px;
+  letter-spacing: 15px;
+}
+
+.resultArea-div p:nth-of-type(1) {
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.resultArea-div p:nth-of-type(2) {
+  font-size: 30px;
+  letter-spacing: 4px;
 }
