@@ -19,7 +19,7 @@ rock.id = "rock";
 paper.id = "paper";
 scissors.id = "scissors";
 
-console.log(buttons);
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -103,43 +103,41 @@ nextBTN.classList.add("btn");
 nextBTN.innerHTML = "NEXT";
 
 const nextDIV = document.createElement("div");
-nextDIV.classList.add('nextDIV')
+nextDIV.classList.add("nextDIV");
 const nextIMG = document.createElement("div");
-nextIMG.classList.add('nextIMG')
+nextIMG.classList.add("nextIMG");
 const stars = document.createElement("img");
-stars.classList.add('stars')
+stars.classList.add("stars");
 stars.src = "./Group 5.svg";
 
-const trophy = document.createElement("img")
-trophy.classList.add("trophy")
-trophy.src = "./Vector.svg"
+const trophy = document.createElement("img");
+trophy.classList.add("trophy");
+trophy.src = "./Vector.svg";
 
 nextIMG.appendChild(stars);
-nextIMG.appendChild(trophy)
+nextIMG.appendChild(trophy);
 const tryAgainButtonCopy = tryAgainButton.cloneNode(true);
 tryAgainButtonCopy.addEventListener("click", () => {
   window.location.reload(tryAgainButtonCopy);
 });
 
-const hurry = document.createElement('h1')
-hurry.classList.add('hurry')
-hurry.innerHTML = "HURRY!!"
+const hurry = document.createElement("h1");
+hurry.classList.add("hurry");
+hurry.innerHTML = "HURRY!!";
 
-const youWonText = document.createElement('h1')
-youWonText.classList.add('youWonText')
-youWonText.innerHTML = "YOU WON THE GAME"
+const youWonText = document.createElement("h1");
+youWonText.classList.add("youWonText");
+youWonText.innerHTML = "YOU WON THE GAME";
 
 nextDIV.appendChild(nextIMG);
-nextDIV.appendChild(hurry)
-nextDIV.appendChild(youWonText)
+nextDIV.appendChild(hurry);
+nextDIV.appendChild(youWonText);
 nextDIV.appendChild(tryAgainButtonCopy);
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     let resultText = playRound(buttons[i].id, computer.id);
     result.innerHTML = resultText;
-    console.log(buttons[i]);
-    console.log(computer);
     if (resultText === "YOU WIN") {
       rulesBtnDiv.appendChild(nextBTN);
       winnerDiv.classList.add("wins");
@@ -167,7 +165,4 @@ nextBTN.addEventListener("click", function () {
   body.innerHTML = " ";
   body.appendChild(nextDIV);
   nextBTN.remove(rulesBtnDiv);
-  console.log(body);
 });
-
-console.log(localStorage);
